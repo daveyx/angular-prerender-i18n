@@ -16,6 +16,14 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en",
+        "locales": {
+          "de": {
+            "translation": "src/locale/messages.de.xlf"
+          }
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -26,6 +34,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "localize": true,
+            "i18nMissingTranslation": "error",
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -57,6 +67,20 @@
               ],
               "outputHashing": "all"
             },
+
+            "en": {
+              "localize": [
+                "en"
+              ],
+              "main": "src/main.ts"
+            },
+            "de": {
+              "localize": [
+                "de"
+              ],
+              "main": "src/main.ts"
+            },
+
             "development": {
               "buildOptimizer": false,
               "optimization": false,
@@ -73,6 +97,12 @@
           "configurations": {
             "production": {
               "browserTarget": "angular-prerender:build:production"
+            },
+            "en": {
+              "browserTarget": "angular-prerender:build:en"
+            },
+            "de": {
+              "browserTarget": "angular-prerender:build:de"
             },
             "development": {
               "browserTarget": "angular-prerender:build:development"
@@ -115,6 +145,7 @@
           "configurations": {
             "production": {
               "outputHashing": "media",
+              "localize": true,
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
