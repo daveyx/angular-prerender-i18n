@@ -1,6 +1,5 @@
 # Why this repo?
-
-For simulating an api call, i provided a short sleep.
+https://stackoverflow.com/questions/71478409/angular-i18n-avoid-trailing-slash-in-url-on-prerendered-root-page
 
 # How to run
 
